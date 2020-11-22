@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Fan_Trap : MonoBehaviour
 {
+
+    //NYI
+
     [SerializeField] float windPower = 10f;
     bool isActivated = true;
 

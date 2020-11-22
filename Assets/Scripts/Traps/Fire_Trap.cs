@@ -8,24 +8,19 @@ public class Fire_Trap : MonoBehaviour
     [SerializeField] float activationTime = 1.0f;
     [SerializeField] float resetTime = 3.0f;
 
-
     bool isActivated = false;
-
-    GameObject player;
     Animator activatedAnim;
 
     // Start is called before the first frame update
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
         activatedAnim = GetComponent<Animator>();
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("Trigger enter");
-
-        StartCoroutine(ActivateTrap());    
+        if (collision.tag == "Player")
+             StartCoroutine(ActivateTrap());    
     }
 
     IEnumerator ActivateTrap()

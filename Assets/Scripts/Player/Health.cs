@@ -17,7 +17,7 @@ public class Health : MonoBehaviour
     //For Player only
     public Transform respawnPoint;
     [SerializeField] GameObject respawnVFX;
-    [SerializeField] HealthBar healthBar;
+    [SerializeField]HealthBar healthBar;
 
     void Start()
     {

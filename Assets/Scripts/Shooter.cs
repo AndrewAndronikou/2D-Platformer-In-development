@@ -11,7 +11,6 @@ public class Shooter : MonoBehaviour
     [SerializeField] GameObject projectile;
 
     [SerializeField] float fireRate;
-    [SerializeField] float projectileSpeed = 5f;
     [SerializeField] float projectileLifetime = 2f;
     GameObject tempProjectile;
     float nextFire;
@@ -38,14 +37,18 @@ public class Shooter : MonoBehaviour
 
         if (Input.GetButtonDown("Fire1"))
         {
-            if (Time.time > nextFire)
-            {
-                MakeAShot();
-                nextFire = Time.time + 1 / fireRate;
-            }
+            SetupShot();
         }
     }
 
+    public void SetupShot()
+    {
+        if (Time.time > nextFire)
+        {
+            MakeAShot();
+            nextFire = Time.time + 1 / fireRate;
+        }
+    }
 
     void MakeAShot()
     {

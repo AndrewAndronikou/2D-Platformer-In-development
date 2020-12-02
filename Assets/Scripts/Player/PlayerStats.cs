@@ -12,6 +12,18 @@ public class PlayerStats : MonoBehaviour
     public static int Score;
     public int startScore = 0;
 
+    //public enum FruitAmount
+    //{
+    //    Apple,
+    //    Kiwi,
+    //    Bananas,
+    //    Cherries,
+    //    Melon,
+    //    Orange,
+    //    Pineapple,
+    //    Strawberry
+    //}
+
     private void Awake()
     {
         Health = startHealth;

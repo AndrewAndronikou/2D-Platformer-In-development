@@ -28,7 +28,7 @@ public class DeathOnCollision : MonoBehaviour
 
         if (collision.gameObject.tag == "Player")
         {
-            playerHealth = GameObject.FindGameObjectWithTag("Player").GetComponent<Health>();
+            playerHealth = collision.gameObject.GetComponent<Health>();
             playerHealth.Die();
             killCount++;
         }        

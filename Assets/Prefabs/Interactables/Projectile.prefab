@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4588840320925394292}
   - component: {fileID: 4836439480252704021}
-  - component: {fileID: 476577490253682287}
-  - component: {fileID: 4253888773800325971}
   - component: {fileID: 7474882601524644927}
+  - component: {fileID: 4253888773800325971}
+  - component: {fileID: 476577490253682287}
   m_Layer: 0
   m_Name: Projectile
   m_TagString: Projectile
@@ -83,39 +83,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &476577490253682287
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6819251893967720802}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 266ebc02be857614da1eeed8b16f383c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  projectileSpeed: 10
-  damage: 0
-  lifeTime: 3
-  destroyedByCollision: 1
-  dieVFX: {fileID: 4966940230259041889, guid: df6537222c296c14ebbd29685335394d, type: 3}
---- !u!58 &4253888773800325971
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6819251893967720802}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.1
 --- !u!50 &7474882601524644927
 Rigidbody2D:
   serializedVersion: 4
@@ -137,3 +104,36 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!58 &4253888773800325971
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6819251893967720802}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.065
+--- !u!114 &476577490253682287
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6819251893967720802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 266ebc02be857614da1eeed8b16f383c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectileSpeed: 10
+  damage: 1
+  lifeTime: 3
+  destroyedByCollision: 1
+  dieVFX: {fileID: 4966940230259041889, guid: df6537222c296c14ebbd29685335394d, type: 3}

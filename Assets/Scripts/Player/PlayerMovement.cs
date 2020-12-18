@@ -7,17 +7,19 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] Joystick joystick;
     [SerializeField] float moveSpeed;
     [SerializeField] float jumpPower;
+
     bool canDoubleJump = false;
     public bool isGrounded = false;
     public bool isLookingRight = true;
+
     SpriteRenderer spriteRenderer;
-    Rigidbody2D rigidbody2D;
+    Rigidbody2D rb;
     Animator anim;
 
     private void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
-        rigidbody2D = GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
     }
 
@@ -26,15 +28,15 @@ public class PlayerMovement : MonoBehaviour
         if(Input.GetButtonDown("Jump"))
             Jump();
 
-        if (joystick.Horizontal >= 0.1f || joystick.Horizontal <= -0.1f)
-            MoveWithJoystick();
-        else
-            anim.SetBool("isRunning", false);
-
-        //if (Input.GetButton("Horizontal"))
-        //    MoveWithKeyboard();
+        //if (joystick.Horizontal >= 0.1f || joystick.Horizontal <= -0.1f)
+        //    MoveWithJoystick();
         //else
         //    anim.SetBool("isRunning", false);
+
+        if (Input.GetButton("Horizontal"))
+            MoveWithKeyboard();
+        else
+            anim.SetBool("isRunning", false);
 
     }
 
@@ -80,8 +82,8 @@ public class PlayerMovement : MonoBehaviour
     {
         if (isGrounded)
         {
-            rigidbody2D.velocity = new Vector3(0, 0, 0);
-            rigidbody2D.AddForce(new Vector2(0f, jumpPower), ForceMode2D.Impulse);
+            GetComponent<Rigidbody2D>().velocity = new Vector3(0, 0, 0);
+            GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, jumpPower), ForceMode2D.Impulse);
             anim.SetBool("jump", true);
             canDoubleJump = true;
         }
@@ -90,11 +92,10 @@ public class PlayerMovement : MonoBehaviour
             if (canDoubleJump)
             {
                 canDoubleJump = false;
-                rigidbody2D.velocity = new Vector3(0,0,0);
-                rigidbody2D.AddForce(new Vector2(0f, jumpPower), ForceMode2D.Impulse);
+                GetComponent<Rigidbody2D>().velocity = new Vector3(0,0,0);
+                GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, jumpPower), ForceMode2D.Impulse);
                 anim.SetTrigger("doubleJump");
             }
-
             anim.ResetTrigger("doubleJump");
         }
     }

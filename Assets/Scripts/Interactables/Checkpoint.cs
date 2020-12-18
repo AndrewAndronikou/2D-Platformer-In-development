@@ -6,22 +6,20 @@ public class Checkpoint : MonoBehaviour
 {
     Animator anim;
     BoxCollider2D boxCollider;
-    GameObject player;
 
     void Start()
     {
         anim = GetComponent<Animator>();
         boxCollider = GetComponent<BoxCollider2D>();
-        player = GameObject.FindGameObjectWithTag("Player");
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (player)
+        if (collision.tag == "Player")
         {
             boxCollider.enabled = false;
             anim.SetBool("Activated", true);
-            player.GetComponent<Health>().respawnPoint = gameObject.transform;
+            collision.GetComponent<Health>().respawnPoint = gameObject.transform;
         }
     }
 }

@@ -11,8 +11,8 @@ public class Health : MonoBehaviour
     //For Enemies only
     [SerializeField] int scoreWorth = 20;
     [SerializeField] GameObject deathVFX;
-
     [SerializeField] bool isPlayer = false;
+    public bool hasTakenDamage = false;
 
     //For Player only
     public Transform respawnPoint;
@@ -24,7 +24,7 @@ public class Health : MonoBehaviour
         currentHealth = startHealth;
     }
 
-    void Update()
+    void LateUpdate()
     {
         if (Input.GetKeyDown(KeyCode.K))
             Die();
@@ -38,9 +38,11 @@ public class Health : MonoBehaviour
 
     public void TakeDamage(int damageAmount)
     {
+        hasTakenDamage = true;
         currentHealth -= damageAmount;
     }
 
+ 
     public void GiveLife()
     {
         PlayerStats.Health++;
@@ -61,17 +63,23 @@ public class Health : MonoBehaviour
         if (!isPlayer)
         {
             PlayerStats.Score += scoreWorth;
-            Destroy(gameObject, 0.5f);
-            Instantiate(deathVFX, transform.position, Quaternion.identity);
+            Destroy(gameObject);
+            Instantiate(deathVFX, transform.position, deathVFX.gameObject.transform.rotation);
         }
     }
 
     IEnumerator RespawnPlayer()
     {
+        StartCoroutine(AddDelay());
         transform.position = respawnPoint.position;
         Instantiate(respawnVFX, transform.position, Quaternion.identity);
         yield return new WaitForSeconds(2f);
         ToggleComponents(true);
+    }
+
+    IEnumerator AddDelay()
+    {
+        yield return new WaitForSeconds(0.2f);
     }
 
     void ToggleComponents(bool toggle)

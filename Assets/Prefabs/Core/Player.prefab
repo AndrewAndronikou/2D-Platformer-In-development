@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 1126114311433102285}
   - component: {fileID: 73386547715267899}
   - component: {fileID: 8964217622546005069}
+  - component: {fileID: 388774872143702741}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -118,7 +119,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 73386547715267892}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -168,6 +169,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d25ec3c55047f840b78537e89dec1d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  joystick: {fileID: 0}
   moveSpeed: 5
   jumpPower: 10
   isGrounded: 0
@@ -190,6 +192,7 @@ MonoBehaviour:
   deathVFX: {fileID: 6016229524112200248, guid: bae80f786910eff4d89e140dd6392e4f,
     type: 3}
   isPlayer: 1
+  hasTakenDamage: 0
   respawnPoint: {fileID: 0}
   respawnVFX: {fileID: 0}
   healthBar: {fileID: 0}
@@ -222,9 +225,24 @@ MonoBehaviour:
   projectile: {fileID: 6819251893967720802, guid: 6425caf98fefd9e4b93377afc448df1c,
     type: 3}
   fireRate: 1
-  projectileSpeed: 5
   projectileLifetime: 5
   hasWeapon: 1
+--- !u!58 &388774872143702741
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 73386547715267892}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.05}
+  serializedVersion: 2
+  m_Radius: 0.11
 --- !u!1 &1367132348663734019
 GameObject:
   m_ObjectHideFlags: 0
@@ -249,7 +267,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1367132348663734019}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: -0.149, y: -0.068, z: 0}
+  m_LocalPosition: {x: -0.156, y: -0.068, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 73386547715267893}
@@ -279,7 +297,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7466774088527368911}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.147, y: -0.068, z: 0}
+  m_LocalPosition: {x: 0.165, y: -0.068, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 73386547715267893}

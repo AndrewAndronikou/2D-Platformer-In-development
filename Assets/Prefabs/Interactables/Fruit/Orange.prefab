@@ -67,6 +67,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1255408556863713064, guid: c07ae3e91334de341bc59a736594fa9d,
+        type: 3}
+      propertyPath: fruitType
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 5654243448435018845, guid: c07ae3e91334de341bc59a736594fa9d,
+        type: 3}
+      propertyPath: m_Radius
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 4510265229855035530, guid: c07ae3e91334de341bc59a736594fa9d,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 3eb533c7e70712c4f838df31f173757f, type: 2}
     - target: {fileID: 4510265229855035529, guid: c07ae3e91334de341bc59a736594fa9d,
         type: 3}
       propertyPath: m_Sprite
@@ -77,21 +92,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_WasSpriteAssigned
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4510265229855035530, guid: c07ae3e91334de341bc59a736594fa9d,
-        type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: 3eb533c7e70712c4f838df31f173757f, type: 2}
-    - target: {fileID: 1255408556863713064, guid: c07ae3e91334de341bc59a736594fa9d,
-        type: 3}
-      propertyPath: fruitType
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5654243448435018845, guid: c07ae3e91334de341bc59a736594fa9d,
-        type: 3}
-      propertyPath: m_Radius
-      value: 0.25
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c07ae3e91334de341bc59a736594fa9d, type: 3}

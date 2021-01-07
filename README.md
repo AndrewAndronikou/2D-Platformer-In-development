@@ -4,6 +4,7 @@ First time creating a full 2D game in Unity, this is currently my sandbox level 
 
 
 7th January 2021
+![](https://github.com/AndrewAndronikou/2D-Platformer-In-development/blob/main/Images/2D%20Platformer%20Gameplay%20gif.gif)
 
 
 17th November 2020
